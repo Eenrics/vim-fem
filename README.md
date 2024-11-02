@@ -114,3 +114,76 @@ Regex Licensing: https://regexlicensing.org/citation/
 - `:s/<word>/<replacement>/g`: Replace all occurrences of the word with the replacement for the current line.
 - `:s/<word>/<replacement>/gc`: Replace all occurrences of the word with the replacement for the current line with confirmation.
 - `:'<,'>s/(\(.*\) && \(.*\))/(\2 \&\& \1)`
+
+Macros
+- `q<letter>`: Start recording a macro.
+- `q`: Stop recording a macro.
+- `@<letter>`: Play the macro.
+- `@@`: Play the last played macro.
+- `10@<letter>`: Play the macro 10 times.
+- `:reg`: Show the contents of the registers.
+- `:reg a`: Show the contents of the register a.
+- `_`: The cursor will got the the first non-blank character of the line.
+- `:ctrl + a`: Increment the number under the cursor.
+- `:ctrl + x`: Decrement the number under the cursor.
+ex. `q a V yy p C-a q`: Record a macro to duplicate the line and increment the number. `@a` to play the macro.
+- `dt<character>`: Delete until the character.
+- `df<character>`: Delete until and including the character.
+- `dT<character>`: Delete backward until the character.
+- `dF<character>`: Delete backward until and including the character.
+- `di<character>`: Delete inside the character. `o` to go to the other end of the character. `diw` to delete the word. `diW` to delete the non-whitespace word(from non-white space to non-white space).
+- `da<character>`: Delete around the character.
+- `ci<character>`: Change inside the character. (Delete and insert)
+- `ca<character>`: Change around the character.
+- `vi<character>`: Select inside the character.
+- `va<character>`: Select around the character.
+- `yi<character>`: Yank inside the character.
+- `ya<character>`: Yank around the character.
+- `d$`: Delete from the cursor to the end of the line.
+- `d0`: Delete from the cursor to the beginning of the line.
+- `dgg`: Delete from the cursor to the beginning of the file.
+- `dG`: Delete from the cursor to the end of the file.
+- `f<character>`: Find the character.
+- `F<character>`: Find the character backward.
+- `"ay`: Yank the selected text to register a.
+- `"ap`: Paste the text from register a.
+
+advanced motion
+- `_`: Go to the first non-blank character of the line.
+- `g_`: Go to the last non-blank character of the line.
+- `0` or `^`: Go to the beginning of the line.
+- `$`: Go to the end of the line.
+- `D` or `d$`: Delete from the cursor to the end of the line.
+- `C` or `c$`: Change from the cursor to the end of the line.
+- `S`: Delete the current line respecting the indentation and enter insert mode.
+- `x`: Delete the character under the cursor.
+- `X`: Delete the character before the cursor.
+- `s`: Substitute (delete and insert) the character under the cursor.
+- `f<character>`: Find the character. `;` to go to the next match, `,` to go to the previous match. 
+- `F<character>` to find the character backward. `,` to go to the next match, `;` to go to the previous match.
+- `t<character>`: Till the character. `;` to go to the next match, `,` to go to the previous match. 
+- `T<character>` to find the character backward. `,` to go to the next match, `;` to go to the previous match.
+- `}`: Go to the next paragraph.
+- `{`: Go to the previous paragraph.
+- `(`: Go to the previous sentence.
+- `)`: Go to the next sentence.
+- `[[`: Go to the previous section.
+- `]]`: Go to the next section.
+- `C + d`: Scroll down half a page.
+- `C + u`: Scroll up half a page.
+- `%`: Go to the matching parenthesis, bracket, or brace.
+
+Cool remaps
+- `vnoremap <leader>p "_dp`: Paste without yanking the text.
+- `vnoremap <leader>y "+y`: Copy to the system clipboard.
+- `nnoremap <leader>y "+y`: Copy to the system clipboard.
+- `nnoremap <leader>Y gg"+yG`: Copy the entire file to the system clipboard.
+- `vnoremap J :m '>+1<CR>gv=gv`: Move the selected lines down.
+- `vnoremap K :m '<-2<CR>gv=gv`: Move the selected lines up.
+
+Create a new file and plugins
+- `%` in file explorer to create a new file. `D` to delete the file and `R` to rename the file.
+https://vimways.org/2019/writing-vim-plugin/
+https://github.com/tpope
+https://vimways.org/2019/writing-vim-plugin/
+https://github.com/tpope/vim-fugitive
