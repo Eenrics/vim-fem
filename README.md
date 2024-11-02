@@ -184,6 +184,6 @@ Cool remaps
 Create a new file and plugins
 - `%` in file explorer to create a new file. `D` to delete the file and `R` to rename the file.
 https://vimways.org/2019/writing-vim-plugin/
-https://github.com/tpope
-https://vimways.org/2019/writing-vim-plugin/
-https://github.com/tpope/vim-fugitive
+https://github.com/tpope - Tim Pope
+https://vimways.org/2019/writing-vim-plugin/ - Writing a Vim Plugin
+https://github.com/tpope/vim-fugitive - Git plugin
