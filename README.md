@@ -102,3 +102,15 @@ Ripgrep: https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
 - (Using Ripgrep plugin) `:Rg <pattern>` (:Rg SOCKET): Search for the pattern in the files. `<tab>`: to select multiple files in fzf. If pressed `<CR>` or enter, you will get into quickfix list
 - (Using vim grep): `:grep <word-pattern> <file-pattern>` (:grep SOCKET **/*.c): Searching for pattern in the files. press enter to navigate into the file or press `!` to silence it. `:copen` to go to search results (quickfix list). `:cnext` will move to the next one, `:cprev` will move to the previous one. c stands for quick. `:cdo` to execute a command accross all of your quick fix list. `:wa` to write all the fixes and save.
 
+Search and Replace
+- `:set noic`: Turn off ignore case.
+- `/<word>`: Search for the word. `n` to go to the next match, `N` to go to the previous match.
+- `:set hls ic`: Highlight search and ignore case.
+Regex Licensing: https://regexlicensing.org/citation/
+- `:nohls`: Turn off the highlight search.
+- `:s/<word>/<replacement>`: Replace the word with the replacement for the current line.
+- `:%s/<word>/<replacement>`: Replace the word with the replacement for the entire file.
+- `:'<,'>s/<word>/<replacement>`: Replace the word with the replacement for the selected lines (visual line). You can select multiple line by pressing `shift + v` and then `j` or `k` to select the lines.
+- `:s/<word>/<replacement>/g`: Replace all occurrences of the word with the replacement for the current line.
+- `:s/<word>/<replacement>/gc`: Replace all occurrences of the word with the replacement for the current line with confirmation.
+- `:'<,'>s/(\(.*\) && \(.*\))/(\2 \&\& \1)`

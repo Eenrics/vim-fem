@@ -7,13 +7,17 @@ description: "Search and Replace!"
 ---
 
 ### Basic Search
-search for `error` by typing `/error<CR>`
+search for `testor` by typing `/testor<CR>`
 
-error
+testor
 
+if (bar && foo) {
+} else if (buzz && boo) {
+} else if (foo && buzz) {
+}
 Lets type a command in.  :set hls ic
 What just happened?
-Re-search `error`
+Re-search `testor`
 
 error
 
