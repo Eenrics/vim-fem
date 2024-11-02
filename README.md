@@ -96,3 +96,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 - `:GFiles`: Fuzzy find files in the git repository.
 - `ctrl + p`: Go to the previous file.
 - `ctrl + n`: Go to the next file.
+
+Quickfix list
+Ripgrep: https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
+- (Using Ripgrep plugin) `:Rg <pattern>` (:Rg SOCKET): Search for the pattern in the files. `<tab>`: to select multiple files in fzf. If pressed `<CR>` or enter, you will get into quickfix list
+- (Using vim grep): `:grep <word-pattern> <file-pattern>` (:grep SOCKET **/*.c): Searching for pattern in the files. press enter to navigate into the file or press `!` to silence it. `:copen` to go to search results (quickfix list). `:cnext` will move to the next one, `:cprev` will move to the previous one. c stands for quick. `:cdo` to execute a command accross all of your quick fix list. `:wa` to write all the fixes and save.
+
