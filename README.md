@@ -261,3 +261,4 @@ vnoremap K :m '<-2<CR>gv=gv
 NeoVim
 - https://neovim.io/
 - https://nvchad.com/docs/quickstart/install
+- https://github.com/jesseduffield/lazygit
