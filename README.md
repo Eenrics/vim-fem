@@ -187,3 +187,73 @@ https://vimways.org/2019/writing-vim-plugin/
 https://github.com/tpope - Tim Pope
 https://vimways.org/2019/writing-vim-plugin/ - Writing a Vim Plugin
 https://github.com/tpope/vim-fugitive - Git plugin
+
+Some Extra notes
+- `:set number`: This will display line numbers on the left side of the editor.
+- `:set nonumber`: disable line numbers later
+- `/`: Search forward (downwards)
+- `?`: Search backward (upwards)
+
+My Vimrc file
+```vim
+"" set guicursor
+set scrolloff=10
+set number
+set relativenumber
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'luxed/ayu-vim'
+call plug#end()
+
+set termguicolors       " enable true colors support
+
+"" set background=light    " for light version of theme
+set background=dark     " for either mirage or dark version.
+" NOTE: `background` controls `g:ayucolor`, but `g:ayucolor` doesn't control `background`
+
+let g:ayucolor="mirage" " for mirage version of theme
+let g:ayucolor="dark"   " for dark version of theme
+" NOTE: g:ayucolor will default to 'dark' when not set.
+
+colorscheme ayu
+"" colorscheme wildcharm
+
+filetype on
+filetype indent on
+filetype plugin on
+set nocompatible
+syntax on
+
+set cursorline
+set cursorcolumn
+
+set incsearch
+set ignorecase
+set hlsearch
+
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+let mapleader = " "
+nnoremap <leader>pv :Vex<CR>
+nnoremap <leader>wq :wq<CR>
+nnoremap <leader>qq :q!<CR>
+nnoremap <leader><CR> :so %<CR>
+"" nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
+vnoremap <leader>p "_dp
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+```
